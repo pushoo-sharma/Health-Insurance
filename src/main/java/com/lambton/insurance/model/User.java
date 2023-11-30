@@ -1,14 +1,12 @@
 package com.lambton.insurance.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;
 
 @Entity
 @Data
+@Table(name = "users")
 public class User {
 
     @Id
@@ -29,6 +27,12 @@ public class User {
 
     private String address;
 
-    private UserType userType;
+//    @Column(name = "user_type", columnDefinition = "smallint")
+//    @Enumerated(EnumType.STRING)
+//    private UserType userType;
+
+    @Column(name = "user_type", length = 20)
+    private String userType;
+
 
 }
