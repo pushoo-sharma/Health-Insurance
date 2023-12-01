@@ -27,9 +27,9 @@ public class User {
 
     private String address;
 
-//    @Column(name = "user_type", columnDefinition = "smallint")
-//    @Enumerated(EnumType.STRING)
-//    private UserType userType;
+    //    @Column(name = "user_type", columnDefinition = "smallint")
+    //    @Enumerated(EnumType.STRING)
+    //    private UserType userType;
 
     @Column(name = "user_type", length = 20)
     private String userType;
