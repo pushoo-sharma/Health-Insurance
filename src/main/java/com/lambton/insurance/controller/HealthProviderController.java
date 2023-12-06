@@ -17,7 +17,7 @@ import com.lambton.insurance.model.HealthProvider;
 import com.lambton.insurance.service.HealthProviderService;
 
 @RestController
-@RequestMapping("healthproviders")
+@RequestMapping("providers")
 public class HealthProviderController {
 	
 	@Autowired
