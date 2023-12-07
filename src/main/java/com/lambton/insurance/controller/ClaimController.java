@@ -1,13 +1,8 @@
 package com.lambton.insurance.controller;
 
-import com.lambton.insurance.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import com.lambton.insurance.model.Claim;
@@ -34,5 +29,20 @@ public class ClaimController {
     @GetMapping("/{claimId}")
     public ResponseEntity<Claim> getClaimById(@PathVariable Integer claimId) {
         return claimsProviderService.getClaimById(claimId);
+    }
+
+    @PostMapping("")
+    public ResponseEntity<Claim> createClaim(@RequestBody Claim claim){
+        return claimsProviderService.createClaim(claim);
+    }
+
+    @PutMapping("/{claimId}")
+    public ResponseEntity<Claim> updateClaim(@PathVariable Integer claimId, @RequestBody Claim claim) {
+        return claimsProviderService.updateClaim(claimId, claim);
+    }
+
+    @DeleteMapping("/{claimId}")
+    public ResponseEntity<Void> deleteClaim(@PathVariable Integer claimId) {
+        return claimsProviderService.deleteClaim(claimId);
     }
 }
