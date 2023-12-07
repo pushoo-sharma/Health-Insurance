@@ -1,5 +1,6 @@
 package com.lambton.insurance.controller;
 
+import com.lambton.insurance.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,4 +31,8 @@ public class ClaimController {
         return claimsProviderService.getClaimsByUserId(userId);
     }
 
+    @GetMapping("/{claimId}")
+    public ResponseEntity<Claim> getClaimById(@PathVariable Integer claimId) {
+        return claimsProviderService.getClaimById(claimId);
+    }
 }
